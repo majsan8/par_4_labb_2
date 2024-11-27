@@ -21,8 +21,8 @@ namespace par_4_labb_2
 
 
             double WCTCelsius​ = 13.12 + 0.6215 * temperature - 11.37 * Math.Pow(basenumber, exponent) + 0.3965 * temperature * Math.Pow(basenumber, exponent);
-
-            Console.WriteLine(WCTCelsius); 
+            string realcold = string.Format("{0:F2}", WCTCelsius);
+            Console.WriteLine(realcold); 
         } 
                 
         
