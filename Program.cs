@@ -1,11 +1,21 @@
-﻿namespace par_4_labb_2
+﻿using System;
+namespace par_4_labb_2
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Välkommen till windchill beräknaren! \n Skriv in med siffror hur många grader celsius du har hos dig samt skriv i siffror hur snabbt vinden blåser (i km/h)");
-            Console.ReadLine();
+            Console.WriteLine("Välkommen till windchill beräknaren!");
+            Console.WriteLine("Skriv in med siffror hur många grader celsius du har hos dig)");
+            Console.WriteLine("Skriv i siffror hur snabbt vinden blåser (i km/h)");
+
+            string userInput1 = Console.ReadLine();
+            string userInput2 = Console.ReadLine();
+            double temperature = Double.Parse(userInput1);
+            double windspeed = Double.Parse(userInput2);
         }
+                
+        
+
     }
 }
