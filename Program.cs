@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 namespace par_4_labb_2
 {
     internal class Program
@@ -10,11 +11,19 @@ namespace par_4_labb_2
             string userInput1 = Console.ReadLine();
             Console.WriteLine("Skriv i siffror hur snabbt vinden blåser (i km/h)");
 
-            
+
             string userInput2 = Console.ReadLine();
             double temperature = Double.Parse(userInput1);
             double windspeed = Double.Parse(userInput2);
-        }
+
+            double basenumber = windspeed;
+            double exponent = 0.16;
+
+
+            double WCTCelsius​ = 13.12 + 0.6215 * temperature - 11.37 * Math.Pow(basenumber, exponent) + 0.3965 * temperature * Math.Pow(basenumber, exponent);
+
+            Console.WriteLine(WCTCelsius); 
+        } 
                 
         
 
