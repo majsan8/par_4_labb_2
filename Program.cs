@@ -70,11 +70,6 @@ namespace par_4_labb_2
                         Console.WriteLine("Tack för att du ville beräkna windchill! Nu avslutas programmet.");
                         Environment.Exit(0);
                         break;
-
-                    default:
-                        Console.WriteLine("\nDu valde ett felaktigt alternativ eller tecken. Välj 1 eller 2:\n");
-                        break;
-                      
                 }
             }
         } 
