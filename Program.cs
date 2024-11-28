@@ -25,7 +25,8 @@ namespace par_4_labb_2
                         string userInput1 = Console.ReadLine();
                         Console.WriteLine("\nSkriv också i siffror hur snabbt vinden blåser (i km/h)\n");
 
-
+                        /* Här har vi samlat datatyper. String och double är datatyper. 
+                         Vi använder variabelnamn som är identifierare som beskriver vad variablen är tilldelad för värde. */
                         string userInput2 = Console.ReadLine();
                         double temperature = Double.Parse(userInput1);
                         double windspeed = Double.Parse(userInput2);
@@ -33,13 +34,14 @@ namespace par_4_labb_2
                         double basenumber = windspeed;
                         double exponent = 0.16;
 
-
+                        /* Här använder vi en metod benämd Math.Pow vilket gör det möjligt att beräkna exponsiella tal i en beräkning. */
                         double WCTCelsius​ = 13.12 + 0.6215 * temperature - 11.37 * Math.Pow(basenumber, exponent) + 0.3965 * temperature * Math.Pow(basenumber, exponent);
-                        string realcold = string.Format("{0:F2}", WCTCelsius);
+                        string realcold = string.Format("{0:F1}", WCTCelsius);
                         Console.WriteLine("\nVädret utomhus känns just nu som:" + " " + realcold + " " + "C°\n");
 
 
-
+                        /* Vi använder en if-else-sats för att skriva ut olika meddelande till användaren beroende på hur 
+                         kallt det är hos användaren baserat på resultatet av beräkningen. */
                         if (WCTCelsius > -25)
                         {
                             Console.WriteLine("Kallt\n");
@@ -61,11 +63,18 @@ namespace par_4_labb_2
                         }
                         break;
                         
-                        /* Om användaren väljer alternativ 2, tolkar vi det som att användaren vill avsluta programmet. Användaren kan göra detta val igenom hela loopen vilket gör att vi avslutar med ett avslutningsmeddelande.*/
+                        /* Om användaren väljer alternativ 2, tolkar vi det som att användaren vill avsluta programmet. 
+                        Användaren kan göra detta val igenom hela loopen vilket gör att vi avslutar med ett avslutningsmeddelande.
+                        Här finns också en metod (Environment.Exit(0)) som avslutar programmet*/
                     case 2:
                         Console.WriteLine("Tack för att du ville beräkna windchill! Nu avslutas programmet.");
                         Environment.Exit(0);
                         break;
+
+                    default:
+                        Console.WriteLine("\nDu valde ett felaktigt alternativ eller tecken. Välj 1 eller 2:\n");
+                        break;
+                      
                 }
             }
         } 
