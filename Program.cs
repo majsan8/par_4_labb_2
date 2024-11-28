@@ -8,7 +8,7 @@ namespace par_4_labb_2
         {
             //Välkomstmeddelande 
             Console.WriteLine("Välkommen till windchill beräknaren! \n");
-            
+
             /* Vilkoret while som en oändlig loop för att programmet ska kunna köras till användaren väljer att avsluta programmet.  */
             while (true)
             {
@@ -17,7 +17,7 @@ namespace par_4_labb_2
 
                 /*Vägval med switchcase, för att avgöra vad programmet ska göra baserat på ett val från användaren.*/
                 switch (i)
-                {   
+                {
                     /* Om användaren väljer alternativ 1, tolkar vi det som att den vill fortsätta räkna ut windchill*/
                     case 1:
 
@@ -62,19 +62,20 @@ namespace par_4_labb_2
                             Console.WriteLine("Stor risk för frostskada\n");
                         }
                         break;
-                        
-                        /* Om användaren väljer alternativ 2, tolkar vi det som att användaren vill avsluta programmet. 
-                        Användaren kan göra detta val igenom hela loopen vilket gör att vi avslutar med ett avslutningsmeddelande.
-                        Här finns också en metod (Environment.Exit(0)) som avslutar programmet*/
+
+                    /* Om användaren väljer alternativ 2, tolkar vi det som att användaren vill avsluta programmet. 
+                    Användaren kan göra detta val igenom hela loopen vilket gör att vi avslutar med ett avslutningsmeddelande.
+                    Här finns också en metod (Environment.Exit(0)) som avslutar programmet*/
                     case 2:
                         Console.WriteLine("Tack för att du ville beräkna windchill! Nu avslutas programmet.");
                         Environment.Exit(0);
                         break;
+
+                    default:
+                        Console.WriteLine("\nDu valde ett felaktigt alternativ eller tecken. Välj 1 eller 2:\n");
+                        break;
                 }
             }
-        } 
-                
-        
-
+        }
     }
 }
