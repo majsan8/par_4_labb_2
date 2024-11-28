@@ -6,19 +6,22 @@ namespace par_4_labb_2
     {
         static void Main(string[] args)
         {
+            //Välkomstmeddelande 
             Console.WriteLine("Välkommen till windchill beräknaren! \n");
-
+            
+            /* Vilkoret while som en oändlig loop för att programmet ska kunna köras till användaren väljer att avsluta programmet.  */
             while (true)
             {
                 Console.WriteLine("Välj ett av nedanstående alternativ. \n 1. Beräkna windchill-faktor. \n 2. Avsluta.\n");
                 int i = int.Parse(Console.ReadLine());
 
-           
+                /*Vägval med switchcase, för att avgöra vad programmet ska göra baserat på ett val från användaren.*/
                 switch (i)
-                {
+                {   
+                    /* Om användaren väljer alternativ 1, tolkar vi det som att den vill fortsätta räkna ut windchill*/
                     case 1:
 
-                        Console.WriteLine("Skriv in med siffror hur många grader celsius du har hos dig)");
+                        Console.WriteLine("Skriv in med siffror hur många grader celsius du har hos dig");
                         string userInput1 = Console.ReadLine();
                         Console.WriteLine("Skriv också i siffror hur snabbt vinden blåser (i km/h)");
 
@@ -35,9 +38,10 @@ namespace par_4_labb_2
                         string realcold = string.Format("{0:F2}", WCTCelsius);
                         Console.WriteLine("\nVädret utomhus känns just nu som:" + " " + realcold + " " + "C°\n");
                         break;
-
+                        
+                        /* Om användaren väljer alternativ 2, tolkar vi det som att användaren vill avsluta programmet. Användaren kan göra detta val igenom hela loopen vilket gör att vi avslutar med ett avslutningsmeddelande.*/
                     case 2:
-                        Console.WriteLine("Nu avslutas programmet.");
+                        Console.WriteLine("Tack för att du ville beräkna windchill! Nu avslutas programmet.");
                         Environment.Exit(0);
                         break;
                 }
