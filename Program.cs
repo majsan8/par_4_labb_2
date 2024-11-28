@@ -21,9 +21,9 @@ namespace par_4_labb_2
                     /* Om användaren väljer alternativ 1, tolkar vi det som att den vill fortsätta räkna ut windchill*/
                     case 1:
 
-                        Console.WriteLine("Skriv in med siffror hur många grader celsius du har hos dig");
+                        Console.WriteLine("\nSkriv in med siffror hur många grader celsius du har hos dig\n");
                         string userInput1 = Console.ReadLine();
-                        Console.WriteLine("Skriv också i siffror hur snabbt vinden blåser (i km/h)");
+                        Console.WriteLine("\nSkriv också i siffror hur snabbt vinden blåser (i km/h)\n");
 
 
                         string userInput2 = Console.ReadLine();
@@ -37,6 +37,28 @@ namespace par_4_labb_2
                         double WCTCelsius​ = 13.12 + 0.6215 * temperature - 11.37 * Math.Pow(basenumber, exponent) + 0.3965 * temperature * Math.Pow(basenumber, exponent);
                         string realcold = string.Format("{0:F2}", WCTCelsius);
                         Console.WriteLine("\nVädret utomhus känns just nu som:" + " " + realcold + " " + "C°\n");
+
+
+
+                        if (WCTCelsius > -25)
+                        {
+                            Console.WriteLine("Kallt\n");
+                        }
+
+                        else if (WCTCelsius <= -25 && WCTCelsius >= -35)
+                        {
+                            Console.WriteLine("Mycket kallt\n");
+                        }
+
+                        else if (WCTCelsius < -35 && WCTCelsius >= -60)
+                        {
+                            Console.WriteLine("Risk för frostskada\n");
+                        }
+
+                        else if (WCTCelsius < -60)
+                        {
+                            Console.WriteLine("Stor risk för frostskada\n");
+                        }
                         break;
                         
                         /* Om användaren väljer alternativ 2, tolkar vi det som att användaren vill avsluta programmet. Användaren kan göra detta val igenom hela loopen vilket gör att vi avslutar med ett avslutningsmeddelande.*/
